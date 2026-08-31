@@ -1,0 +1,17 @@
+app:
+  log_level: info
+  telemetry_endpoint: http://localhost:4317
+
+kafka:
+  brokers: localhost:9092
+  security_protocol: plaintext
+  ssl:
+    ca_location: /app/cert/kafka_ca.pem
+    certificate_location: /app/cert/app_cert.pem
+    key_location: /app/cert/app_key.pem
+    key_password:
+  consumer_group: kafka-rust-mapper-base
+  input_topic: mapper-input
+  output_topic: mapper-output
+  offset_reset: earliest
+  num_partitions: 1

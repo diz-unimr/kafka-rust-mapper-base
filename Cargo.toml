@@ -1,0 +1,28 @@
+[package]
+name = "kafka-rust-mapper-base"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rdkafka = { version = "0.38.0", features = ["ssl", "cmake-build"] }
+tokio = { version = "1.50.0", features = ["full"] }
+log = "0.4.29"
+env_logger = "0.11.9"
+tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+futures = "0.3.32"
+config = "0.15.19"
+serde = { version = "1.0.228", features = ["derive"] }
+# serde_json = "1.0.149"
+# fhir-model = { version = "0.12.1", default-features = false, features = ["builders", "r4b"] }
+anyhow = "1.0.102"
+thiserror = "2.0.18"
+# chrono = { version = "0.4.44", features = ["serde"] }
+tokio-util = "0.7.18"
+validator = { version = "0.20.0", features = ["derive"] }
+opentelemetry = "0.32.0"
+opentelemetry_sdk = "0.32.1"
+opentelemetry-otlp = { version = "0.32.0", features = ["grpc-tonic"] }
+itertools = "0.15.0"
+
+[dev-dependencies]
+mock-collector = "0.2.12"
