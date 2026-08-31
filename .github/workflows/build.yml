@@ -1,0 +1,25 @@
+name: build & test
+
+"on":
+  push:
+    branches:
+      - main
+    tags:
+      - "**"
+  pull_request:
+
+permissions: read-all
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+      - name: Build
+        run: cargo build --verbose
+      - name: Install Rust
+        run: rustup update stable
